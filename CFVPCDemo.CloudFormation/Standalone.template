@@ -94,6 +94,23 @@
                 ]
             }
         },
+		"PublicInternetGatewayAttachement": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+			
+            "Properties": {
+                "InternetGatewayId": {
+                    "Ref": "PublicInternetGateway"
+                },
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7f400654-a884-4991-a968-29cf7a190dd0"
+                }
+            }
+        },
 
         "PublicSubnet": {
             "Type": "AWS::EC2::Subnet",
