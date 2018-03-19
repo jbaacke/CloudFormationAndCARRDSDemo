@@ -49,126 +49,6 @@
             "Description": "Determines wether or not to create availability zones."
         },
 
-
-		"UserConfigurationVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development",
-                "Version1"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"SystemMetricsVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development",
-                "Version1"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"TransactionVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development",
-                "AddingtoKNect",
-				"Version1"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"AlertsVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development",
-                "AddingtoKNect"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"CustomerVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"KioskTemplateVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development",
-				"Version1"
-            ],
-            "Description": "Version of the UserConfiguration Microservice to use"
-        },
-		"AnalyticsVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Analytics Microservice to use"
-        },
-		"AuthorizationVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Analytics Microservice to use"
-        },
-		"PortalVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Portal Microservice to use"
-        },
-		"KioskDetailVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Portal Microservice to use"
-        },
-		"ProductVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Portal Microservice to use"
-        },
-		"InventoryVersion": {
-            "Type": "String",
-            "Default": "Development",
-            "AllowedValues": [
-                "Development"
-            ],
-            "Description": "Version of the Portal Microservice to use"
-        },
-
-		"IOTEndpointComponent": {
-            "Type": "String",
-            "Default": "tempvalue",
-            "Description": "A name prefix which helps to identify resources associated with this stack"
-        },
-
-		"ResetTransactions": {
-            "Type": "String",
-            "Default": "true",
-            "AllowedValues": [
-                "true",
-                "false"
-            ],
-            "Description": "Determines wether or not to create availability zones."
-        },
-
 		"EnvironmentType": {
             "Type": "Number",
             "Default": "4",
@@ -181,219 +61,6 @@
             ],
             "Description": "Version of the UserConfiguration Microservice to use"
         }
-    },
-
-	"Metadata": {
-        "AWS::CloudFormation::Designer": {
-            "8e2a3d25-94a4-498f-83f8-f540e780391d": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 800,
-                    "y": 400
-                },
-                "z": 1,
-                "embeds": []
-            },
-            "8719e3be-b844-4b3b-a3de-d0fce850ecc7": {
-                "size": {
-                    "width": 510,
-                    "height": 510
-                },
-                "position": {
-                    "x": 90,
-                    "y": 180
-                },
-                "z": 1,
-                "embeds": [
-                    "9bf3363e-e601-477c-a35e-a123944978c9",
-                    "2a7ec6d0-ffbc-454b-989b-421370df5ef5",
-                    "f8ccee28-8f61-46db-9379-011a9ca2960b",
-                    "a3fe0aab-94e7-4be2-bdb2-cc0e0cf178b9",
-                    "b73751a3-61e1-4c4a-9cd2-b19bd8cab0d6",
-                    "47fa56f4-8510-47ce-bc65-8a2e58cc1981",
-                    "eb070258-cf45-4e88-b024-7d97d9c4d596"
-                ]
-            },
-            "9bf3363e-e601-477c-a35e-a123944978c9": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 270,
-                    "y": 320
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": []
-            },
-            "2a7ec6d0-ffbc-454b-989b-421370df5ef5": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 270,
-                    "y": 220
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": []
-            },
-            "f8ccee28-8f61-46db-9379-011a9ca2960b": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 510,
-                    "y": 220
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": []
-            },
-            "a3fe0aab-94e7-4be2-bdb2-cc0e0cf178b9": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 380,
-                    "y": 410
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": [],
-                "isrelatedto": [
-                    "f8ccee28-8f61-46db-9379-011a9ca2960b"
-                ]
-            },
-            "b73751a3-61e1-4c4a-9cd2-b19bd8cab0d6": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 380,
-                    "y": 220
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": [],
-                "isrelatedto": [
-                    "f8ccee28-8f61-46db-9379-011a9ca2960b"
-                ]
-            },
-            "47fa56f4-8510-47ce-bc65-8a2e58cc1981": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 380,
-                    "y": 320
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": [],
-                "isrelatedto": [
-                    "f8ccee28-8f61-46db-9379-011a9ca2960b"
-                ]
-            },
-            "eb070258-cf45-4e88-b024-7d97d9c4d596": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 380,
-                    "y": 520
-                },
-                "z": 2,
-                "parent": "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                "embeds": [],
-                "isrelatedto": [
-                    "f8ccee28-8f61-46db-9379-011a9ca2960b"
-                ]
-            },
-            "a5662b3c-c775-4f39-8495-601c534d118c": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 660,
-                    "y": 320
-                },
-                "z": 1,
-                "embeds": [],
-                "isrelatedto": [
-                    "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                    "8e2a3d25-94a4-498f-83f8-f540e780391d"
-                ]
-            },
-            "ae3db008-7d6f-4b83-90bf-4ae11ba1a2a3": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 660,
-                    "y": 220
-                },
-                "z": 1,
-                "embeds": [],
-                "isrelatedto": [
-                    "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                    "8e2a3d25-94a4-498f-83f8-f540e780391d"
-                ]
-            },
-            "cc2b620e-fd64-4d66-b4d0-1372d39092a3": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 670,
-                    "y": 450
-                },
-                "z": 1,
-                "embeds": [],
-                "isrelatedto": [
-                    "8719e3be-b844-4b3b-a3de-d0fce850ecc7",
-                    "8e2a3d25-94a4-498f-83f8-f540e780391d"
-                ]
-            },
-            "7f400654-a884-4991-a968-29cf7a190dd0": {
-                "source": {
-                    "id": "8e2a3d25-94a4-498f-83f8-f540e780391d"
-                },
-                "target": {
-                    "id": "8719e3be-b844-4b3b-a3de-d0fce850ecc7"
-                }
-            }
-        },
-
-		"AWS::CloudFormation::Interface" : {
-			"ParameterGroups" : [
-				{
-					"Label" : { "default":"Stuff you should acutally be touching" },
-					"Parameters" : [ "EnvironmentName", "StackSourceBucket", "StackSourcePath", "IOTEndpointComponent", "EnvironmentType" ]
-				},
-				{
-					"Label" : { "default" : "Microservice Versions" },
-					"Parameters" : [ "UserConfigurationVersion","SystemMetricsVersion", "TransactionVersion", "AlertsVersion", "CustomerVersion", "KioskTemplateVersion", "AnalyticsVersion" ]
-				},
-				{
-					"Label" : { "default":"Don't touch" },
-					"Parameters" : [ "ResetTransactions", "NumberOfAvailabilityZones", "CreateCostAcruingResources", "UseAvailabilityZones" ]
-				}
-			]
-		}
     },
 
 
@@ -421,8 +88,7 @@
 				{"Fn::Equals": [{"Ref": "UseAvailabilityZones"},true]}
 			]
         },
-		"CreateNetworkInfrastructure": {"Fn::Equals" : [{"Ref" : "UseAvailabilityZones"}, "true"]},
-        "UseTransactions" : {"Fn::Equals" : [{"Ref" : "ResetTransactions"}, "true"]}
+		"CreateNetworkInfrastructure": {"Fn::Equals" : [{"Ref" : "UseAvailabilityZones"}, "true"]}
 	},
 
 
@@ -434,65 +100,11 @@
 			"2" : { "ResourceName" : "Uat" },
 			"3" : { "ResourceName" : "Prod" },
 			"4" : { "ResourceName" : "DevOps" }
-		},
-
-		"UserConfigurationVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "UserConfiguration/dev", "Region" : "eu-central-1" },
-			"Version1" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "UserConfiguration/Version1", "Region" : "eu-central-1" }
-		},
-
-		"SystemMetricsVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "SystemMetrics/dev", "Region" : "eu-central-1" },
-			"Version1" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "SystemMetrics/Version1", "Region" : "eu-central-1" }
-		},
-
-		"TransactionVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Transactions/dev", "Region" : "eu-central-1" },
-			"AddingtoKNect" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Transactions/AddingToKnect", "Region" : "eu-central-1" },
-			"Version1" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Transactions/Version1", "Region" : "eu-central-1" }
-		},
-
-		"AuthorizationVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Authorization/dev", "Region" : "eu-central-1" }
-		},
-
-		"AlertsVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Alerts/dev", "Region" : "eu-central-1" },
-			"AddingtoKNect" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Alerts/AddingtoKNect", "Region" : "eu-central-1" }
-		},
-
-		"CustomerVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Customer/dev", "Region" : "eu-central-1" }
-		},
-
-		"KioskTemplateVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "KioskTemplate/dev", "Region" : "eu-central-1" },
-			"Version1" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "KioskTemplate/Version1", "Region" : "eu-central-1" }
-		},
-
-		"PortalVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "KNectPortal/dev", "Region" : "eu-central-1" }
-		},
-
-		"InventoryVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Inventory/dev", "Region" : "eu-central-1" }
-		},
-
-		"KioskDetailVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "KioskDetail/dev", "Region" : "eu-central-1" }
-		},
-
-		"ProductVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Product/dev", "Region" : "eu-central-1" }
-		},
-
-		"AnalyticsVersions" : {
-			"Development" : { "SourceBucket" : "kioskinfosystems-deployment-frankfurt", "Path" : "Analytics/dev", "Region" : "eu-central-1" }
 		}
   },
     "Resources": {
 
-        "KNectVPC": {
+        "DemoVPC": {
             "Type": "AWS::EC2::VPC",
 			"Condition": "CreateNetworkInfrastructure",
             "Properties": {
@@ -510,17 +122,12 @@
                                     {
                                         "Ref": "EnvironmentName"
                                     },
-                                    "KnectVPC"
+                                    "CFDemoVPC"
                                 ]
                             ]
                         }
                     }
                 ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "8719e3be-b844-4b3b-a3de-d0fce850ecc7"
-                }
             }
         },
         "PublicInternetGateway": {
@@ -543,11 +150,6 @@
                         }
                     }
                 ]
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "8e2a3d25-94a4-498f-83f8-f540e780391d"
-                }
             }
         },
         "PublicInternetGatewayAttachement": {
@@ -558,7 +160,7 @@
                     "Ref": "PublicInternetGateway"
                 },
                 "VpcId": {
-                    "Ref": "KNectVPC"
+                    "Ref": "DemoVPC"
                 }
             },
             "Metadata": {
@@ -587,7 +189,7 @@
                         "Ref": "CreateCostAcruingResources"
                     },
                     "ContainingVPC": {
-                        "Ref": "KNectVPC"
+                        "Ref": "DemoVPC"
                     },
                     "PublicInternetGateway": {
                         "Ref": "PublicInternetGateway"
@@ -636,7 +238,7 @@
                         "Ref": "CreateCostAcruingResources"
                     },
                     "ContainingVPC": {
-                        "Ref": "KNectVPC"
+                        "Ref": "DemoVPC"
                     },
                     "PublicInternetGateway": {
                         "Ref": "PublicInternetGateway"
@@ -685,7 +287,7 @@
                         "Ref": "CreateCostAcruingResources"
                     },
                     "ContainingVPC": {
-                        "Ref": "KNectVPC"
+                        "Ref": "DemoVPC"
                     },
                     "PublicInternetGateway": {
                         "Ref": "PublicInternetGateway"
@@ -735,12 +337,7 @@
                 "GroupDescription": "Allows RDP Traffic Internally",
                 "SecurityGroupIngress": [],
                 "VpcId": {
-                    "Ref": "KNectVPC"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "f8ccee28-8f61-46db-9379-011a9ca2960b"
+                    "Ref": "DemoVPC"
                 }
             }
         },
@@ -771,12 +368,7 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "eb070258-cf45-4e88-b024-7d97d9c4d596"
+                    "Ref": "DemoVPC"
                 }
             }
         },
@@ -805,12 +397,7 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "2a7ec6d0-ffbc-454b-989b-421370df5ef5"
+                    "Ref": "DemoVPC"
                 }
             }
         },
@@ -849,7 +436,7 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
+                    "Ref": "DemoVPC"
                 }
             },
             "Metadata": {
@@ -893,7 +480,7 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
+                    "Ref": "DemoVPC"
                 }
             },
             "Metadata": {
@@ -929,7 +516,7 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
+                    "Ref": "DemoVPC"
                 }
             },
             "Metadata": {
@@ -969,651 +556,14 @@
                     }
                 ],
                 "VpcId": {
-                    "Ref": "KNectVPC"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "9bf3363e-e601-477c-a35e-a123944978c9"
+                    "Ref": "DemoVPC"
                 }
             }
-        },
+        }
 
-
-		"MicroservicePortalConfiguration": {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "PortalVersions", { "Ref" : "PortalVersion" }, "Path"]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "PortalVersions", { "Ref" : "PortalVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-        },
-		"MicroserviceAuthorization" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"DependsOn" : "MicroservicePortalConfiguration",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "AuthorizationVersions", { "Ref" : "AuthorizationVersion" }, "Path"]}
-				},
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "AuthorizationVersions", { "Ref" : "AuthorizationVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-
-		"MicroserviceUserConfiguration": {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "UserConfigurationVersions", { "Ref" : "UserConfigurationVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "UserConfigurationVersions", { "Ref" : "UserConfigurationVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-        },
-		"MicroserviceSystemMetrics" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"DependsOn" : "MicroserviceUserConfiguration",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "SystemMetricsVersions", { "Ref" : "SystemMetricsVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "SystemMetricsVersions", { "Ref" : "SystemMetricsVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceKioskDetail" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"DependsOn" : "MicroserviceUserConfiguration",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "KioskDetailVersions", { "Ref" : "KioskDetailVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "KioskDetailVersions", { "Ref" : "KioskDetailVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-
-		"MicroserviceTransaction" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"Condition" : "UseTransactions",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "TransactionVersions", { "Ref" : "TransactionVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "TransactionVersions", { "Ref" : "TransactionVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceAlerts" : {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "AlertsVersions", { "Ref" : "AlertsVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "AlertsVersions", { "Ref" : "AlertsVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceProduct" : {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "ProductVersions", { "Ref" : "ProductVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "ProductVersions", { "Ref" : "ProductVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceInventory" : {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "InventoryVersions", { "Ref" : "InventoryVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "InventoryVersions", { "Ref" : "InventoryVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		
-
-		"MicroserviceKioskCustomer" : {
-            "Type": "AWS::CloudFormation::Stack",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "CustomerVersions", { "Ref" : "CustomerVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "CustomerVersions", { "Ref" : "CustomerVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceKioskTemplate" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"DependsOn" : "MicroserviceKioskCustomer",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "KioskTemplateVersions", { "Ref" : "KioskTemplateVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "KioskTemplateVersions", { "Ref" : "KioskTemplateVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-		"MicroserviceAnalytics" : {
-            "Type": "AWS::CloudFormation::Stack",
-			"Condition" : "UseTransactions",
-			"DependsOn" : "MicroserviceKioskTemplate",
-            "Properties": {
-                "Parameters": {
-                    "EnvironmentName": { "Ref": "EnvironmentName"},
-					"EnvironmentType": { "Ref": "EnvironmentType"},
-                    "StackSourceBucket": {"Ref": "StackSourceBucket" },
-					"IOTEndpointComponent": {"Ref": "IOTEndpointComponent" },
-                    "StackSourcePath": { "Fn::FindInMap" : [ "AnalyticsVersions", { "Ref" : "AnalyticsVersion" }, "Path"]},
-					"LambdaSubnets" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]},
-					"LambdaSecurityGroups" : {"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}
-                },
-                "TemplateURL": {
-                    "Fn::Join": [
-                        "",
-                        [
-                            "https://s3.",
-							{"Ref": "AWS::Region" },
-							".amazonaws.com/",
-                            {"Ref": "StackSourceBucket" },
-							"/",
-                            { "Fn::FindInMap" : [ "AnalyticsVersions", { "Ref" : "AnalyticsVersion" }, "Path"]},
-                            "/",
-                            "master.template"
-                        ]
-                    ]
-                },
-                "TimeoutInMinutes": 5
-            }
-		},
-
-
-		"IOTPolicy" : {
-			"Type": "AWS::IoT::Policy",
-			"Properties": {
-				"PolicyDocument": {
-					"Version": "2012-10-17",
-					"Statement": [
-						{
-							"Effect": "Allow",
-							"Action": "iot:*",
-							"Resource": [
-								{
-                                    "Fn::Sub" : [
-                                        "arn:aws:iot:${AWS::Region}:${AWS::AccountId}:rule/*_${EnvType}",
-                                        {
-                                            "EnvType" : {
-                                                "Fn::FindInMap" : [
-                                                    "EnvironmentTypeConfigurations",
-                                                    {
-                                                        "Ref" : "EnvironmentType"
-                                                    },
-                                                    "ResourceName"
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-							]
-						},
-						{
-							"Effect": "Allow",
-							"Action": "iot:Connect",
-							"Resource": "*"
-						},
-						{
-							"Effect": "Allow",
-							"Action": [
-								"iot:Subscribe",
-								"iot:Receive",
-								"iot:Publish"
-							],
-							"Resource": [
-								{ "Fn::Sub" : "arn:aws:iot:${AWS::Region}:${AWS::AccountId}:topic/*" },
-								{ "Fn::Sub" : "arn:aws:iot:${AWS::Region}:${AWS::AccountId}:topicfilter/*"}
-							]
-						}
-					]
-				}
-			}
-		}
 
     },
+
     "Outputs": {}
     
 }
