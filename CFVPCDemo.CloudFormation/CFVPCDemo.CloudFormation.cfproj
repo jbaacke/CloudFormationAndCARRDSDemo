@@ -20,6 +20,9 @@
     <Compile Include="master.template">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Standalone.template">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
   </PropertyGroup>
