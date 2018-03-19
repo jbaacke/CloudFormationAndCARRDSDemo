@@ -1,14 +1,569 @@
-﻿{
-	"AWSTemplateFormatVersion" : "2010-09-09",
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "A full Knect implementation.",
+    "Parameters": {
+        "EnvironmentName": {
+            "Type": "String",
+            "Default": "",
+            "Description": "A name prefix which helps to identify resources associated with this stack"
+        },
+        "StackSourceBucket": {
+            "Type": "String",
+            "Default": "",
+            "Description": "The Bucket containing the master.template this stack is being built from."
+        },
+        "StackSourcePath": {
+            "Type": "String",
+            "Default": "",
+            "Description": "The path to the master.template file inside of StackSourceBucket"
+        },
 
-	"Description" : "",
 
-	"Parameters" : {
+        "CreateCostAcruingResources": {
+            "Type": "String",
+            "Default": "false",
+            "AllowedValues": [
+                "true",
+                "false"
+            ],
+            "Description": "Determines wether or not charge incurring resources are created. This stack will not be functional if this is set to false."
+        },
+        "NumberOfAvailabilityZones": {
+            "Type": "Number",
+            "Default": 1,
+            "AllowedValues": [
+                1,
+                2,
+				3
+            ],
+            "Description": "Determines wether or not A secondary availability zone is created for high availability"
+        },
+
+		"UseAvailabilityZones": {
+            "Type": "String",
+            "Default": "false",
+            "AllowedValues": [
+                "true",
+                "false"
+            ],
+            "Description": "Determines wether or not to create availability zones."
+        },
+
+		"EnvironmentType": {
+            "Type": "Number",
+            "Default": "4",
+            "AllowedValues": [
+                "0",
+                "1",
+				"2",
+				"3",
+				"4"
+            ],
+            "Description": "Version of the UserConfiguration Microservice to use"
+        }
+    },
+
+
+    "Conditions": {
+        "CreateCostAcruingResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "CreateCostAcruingResources"
+                },
+                "true"
+            ]
+        },
+        "CreateThirdAvailabilityZone": {
+			"Fn::And": [
+				{"Fn::Equals": [{"Ref": "NumberOfAvailabilityZones"},3]},
+				{"Fn::Equals": [{"Ref": "UseAvailabilityZones"},true]}
+			]
+        },
+		"CreateSecondAvailabilyZone": {
+			"Fn::And": [
+				{"Fn::Or": [
+					{"Fn::Equals": [{"Ref": "NumberOfAvailabilityZones"},2]},
+					{"Fn::Equals": [{"Ref": "NumberOfAvailabilityZones"},3]}
+				]},
+				{"Fn::Equals": [{"Ref": "UseAvailabilityZones"},true]}
+			]
+        },
+		"CreateNetworkInfrastructure": {"Fn::Equals" : [{"Ref" : "UseAvailabilityZones"}, "true"]}
 	},
 
-	"Resources" : {
-	},
 
-	"Outputs" : {
-	}
+	"Mappings" : {
+
+		"EnvironmentTypeConfigurations" : {
+			"0" : { "ResourceName" : "Dev" },
+			"1" : { "ResourceName" : "Qa" },
+			"2" : { "ResourceName" : "Uat" },
+			"3" : { "ResourceName" : "Prod" },
+			"4" : { "ResourceName" : "DevOps" }
+		}
+  },
+    "Resources": {
+
+        "DemoVPC": {
+            "Type": "AWS::EC2::VPC",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/16",
+                "EnableDnsSupport": true,
+                "EnableDnsHostnames": false,
+                "InstanceTenancy": "default",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": {
+                            "Fn::Join": [
+                                "-",
+                                [
+                                    {
+                                        "Ref": "EnvironmentName"
+                                    },
+                                    "CFDemoVPC"
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "PublicInternetGateway": {
+            "Type": "AWS::EC2::InternetGateway",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": {
+                            "Fn::Join": [
+                                "-",
+                                [
+                                    {
+                                        "Ref": "EnvironmentName"
+                                    },
+                                    "PublicInternetGateway"
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "PublicInternetGatewayAttachement": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "InternetGatewayId": {
+                    "Ref": "PublicInternetGateway"
+                },
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7f400654-a884-4991-a968-29cf7a190dd0"
+                }
+            }
+        },
+
+
+        "AvailabilityZone0": {
+            "Type": "AWS::CloudFormation::Stack",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "Parameters": {
+                    "EnvironmentName": {
+                        "Ref": "EnvironmentName"
+                    },
+                    "StackSourceBucket": {
+                        "Ref": "StackSourceBucket"
+                    },
+                    "StackSourcePath": {
+                        "Ref": "StackSourcePath"
+                    },
+                    "CreateCostAcruingResources": {
+                        "Ref": "CreateCostAcruingResources"
+                    },
+                    "ContainingVPC": {
+                        "Ref": "DemoVPC"
+                    },
+                    "PublicInternetGateway": {
+                        "Ref": "PublicInternetGateway"
+                    },
+                    "AZNumber": 0
+                },
+                "TemplateURL": {
+                    "Fn::Join": [
+                        "/",
+                        [
+                            "https://s3.amazonaws.com",
+                            {
+                                "Ref": "StackSourceBucket"
+                            },
+                            {
+                                "Ref": "StackSourcePath"
+                            },
+                            "Resources",
+                            "AvailabilityZones.template"
+                        ]
+                    ]
+                },
+                "TimeoutInMinutes": 5
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "cc2b620e-fd64-4d66-b4d0-1372d39092a3"
+                }
+            }
+        },
+        "AvailabilityZone1": {
+            "Type": "AWS::CloudFormation::Stack",
+			"Condition": "CreateSecondAvailabilyZone",
+            "Properties": {
+                "Parameters": {
+                    "EnvironmentName": {
+                        "Ref": "EnvironmentName"
+                    },
+                    "StackSourceBucket": {
+                        "Ref": "StackSourceBucket"
+                    },
+                    "StackSourcePath": {
+                        "Ref": "StackSourcePath"
+                    },
+                    "CreateCostAcruingResources": {
+                        "Ref": "CreateCostAcruingResources"
+                    },
+                    "ContainingVPC": {
+                        "Ref": "DemoVPC"
+                    },
+                    "PublicInternetGateway": {
+                        "Ref": "PublicInternetGateway"
+                    },
+                    "AZNumber": 1
+                },
+                "TemplateURL": {
+                    "Fn::Join": [
+                        "/",
+                        [
+                            "https://s3.amazonaws.com",
+                            {
+                                "Ref": "StackSourceBucket"
+                            },
+                            {
+                                "Ref": "StackSourcePath"
+                            },
+                            "Resources",
+                            "AvailabilityZones.template"
+                        ]
+                    ]
+                },
+                "TimeoutInMinutes": 5
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "ae3db008-7d6f-4b83-90bf-4ae11ba1a2a3"
+                }
+            }
+        },
+        "AvailabilityZone2": {
+            "Type": "AWS::CloudFormation::Stack",
+			"Condition": "CreateThirdAvailabilityZone",
+            "Properties": {
+                "Parameters": {
+                    "EnvironmentName": {
+                        "Ref": "EnvironmentName"
+                    },
+                    "StackSourceBucket": {
+                        "Ref": "StackSourceBucket"
+                    },
+                    "StackSourcePath": {
+                        "Ref": "StackSourcePath"
+                    },
+                    "CreateCostAcruingResources": {
+                        "Ref": "CreateCostAcruingResources"
+                    },
+                    "ContainingVPC": {
+                        "Ref": "DemoVPC"
+                    },
+                    "PublicInternetGateway": {
+                        "Ref": "PublicInternetGateway"
+                    },
+                    "AZNumber": 2
+                },
+                "TemplateURL": {
+                    "Fn::Join": [
+                        "/",
+                        [
+                            "https://s3.amazonaws.com",
+                            {
+                                "Ref": "StackSourceBucket"
+                            },
+                            {
+                                "Ref": "StackSourcePath"
+                            },
+                            "Resources",
+                            "AvailabilityZones.template"
+                        ]
+                    ]
+                },
+                "TimeoutInMinutes": 5
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a5662b3c-c775-4f39-8495-601c534d118c"
+                }
+            }
+        },
+
+        "InternalDomainSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "Internal Domain"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            }
+        },
+        "RDPInternalSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "RDPInternal"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "3389",
+                        "ToPort": "3389",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            }
+        },
+        "LoadbalancerSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "LoadBalancer"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows 80 and 443 traffic through the load balancer",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "80",
+                        "ToPort": "80",
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            }
+        },
+        "DomainControllerSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "DomainController"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 1,
+                        "ToPort": 65535,
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    },
+                    {
+                        "IpProtocol": "udp",
+                        "FromPort": 1,
+                        "ToPort": 65535,
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "47fa56f4-8510-47ce-bc65-8a2e58cc1981"
+                }
+            }
+        },
+        "InternalWebTrafficSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "HTTP/S Traffic"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "80",
+                        "ToPort": "80",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "443",
+                        "ToPort": "443",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b73751a3-61e1-4c4a-9cd2-b19bd8cab0d6"
+                }
+            }
+        },
+        "MQTTSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "MQTT"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "8883",
+                        "ToPort": "8883",
+                        "SourceSecurityGroupId": {
+                            "Ref": "InternalDomainSecurityGroup"
+                        }
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a3fe0aab-94e7-4be2-bdb2-cc0e0cf178b9"
+                }
+            }
+        },
+        "ExternalRDPSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+			"Condition": "CreateNetworkInfrastructure",
+            "Properties": {
+                "GroupName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "EnvironmentName"
+                            },
+                            "RDPExternal"
+                        ]
+                    ]
+                },
+                "GroupDescription": "Allows RDP Traffic Internally",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "3389",
+                        "ToPort": "3389",
+                        "CidrIp": "173.14.4.109/32"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": "3389",
+                        "ToPort": "3389",
+                        "CidrIp": "173.239.232.153/32"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "DemoVPC"
+                }
+            }
+        }
+
+
+    },
+
+    "Outputs": {}
+    
 }
