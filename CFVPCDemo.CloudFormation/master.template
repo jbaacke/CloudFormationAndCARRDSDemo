@@ -195,8 +195,8 @@
                     "Fn::Join" : [
                         "_",
                         [
-                            "ConnectionHandler",
-							{ "Fn::FindInMap" : [ "EnvironmentTypeConfigurations", { "Ref" : "EnvironmentType" }, "ResourceName"]}
+                            "DemoLambda",
+							{ "Ref" : "EnvironmentName" }
                         ]
                     ]
                 },
