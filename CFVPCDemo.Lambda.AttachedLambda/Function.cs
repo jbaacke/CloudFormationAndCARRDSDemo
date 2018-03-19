@@ -21,7 +21,7 @@ namespace CFVPCDemo.Lambda.AttachedLambda
         /// <returns></returns>
         public string FunctionHandler(object input, ILambdaContext context)
         {
-            context.Logger.LogLine("Hello DevOps Meetup");
+            context.Logger.LogLine("Hello World");
 
             return "Sucess!";
         }
