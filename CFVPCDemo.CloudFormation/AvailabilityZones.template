@@ -117,24 +117,6 @@
                 }
             }
         },
-        "PrivateRouteExternalTraffic": {
-            "Type": "AWS::EC2::Route",
-             
-            "Properties": {
-                "DestinationCidrBlock": "0.0.0.0/0",
-                "NatGatewayId": {
-                    "Ref": "PrivateNATGateway"
-                },
-                "RouteTableId": {
-                    "Ref": "PrivateRouteTable"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "4dc64a89-b74e-4c78-aa81-e0b609f04bbe"
-                }
-            }
-        },
         "PrivateRouteTable": {
             "Type": "AWS::EC2::RouteTable",
             "Properties": {
@@ -346,26 +328,6 @@
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "aed520ef-c681-47d8-af17-27f6a555909c"
-                }
-            }
-        },
-        "PrivateNATGateway": {
-            "Type": "AWS::EC2::NatGateway",
-             
-            "Properties": {
-                "AllocationId": {
-                    "Fn::GetAtt": [
-                        "PrivateElasticIP",
-                        "AllocationId"
-                    ]
-                },
-                "SubnetId": {
-                    "Ref": "PublicSubnet"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "cca6905c-7723-461a-824b-f55c64d788ec"
                 }
             }
         },
