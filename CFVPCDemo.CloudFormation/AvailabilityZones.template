@@ -108,7 +108,6 @@
         },
         "PrivateElasticIP": {
             "Type": "AWS::EC2::EIP",
-            "Condition": "CreateCostAcruingResources",
             "Properties": {
                 "Domain": "vpc"
             },
@@ -120,7 +119,7 @@
         },
         "PrivateRouteExternalTraffic": {
             "Type": "AWS::EC2::Route",
-            "Condition": "CreateCostAcruingResources",
+             
             "Properties": {
                 "DestinationCidrBlock": "0.0.0.0/0",
                 "NatGatewayId": {
@@ -352,7 +351,7 @@
         },
         "PrivateNATGateway": {
             "Type": "AWS::EC2::NatGateway",
-            "Condition": "CreateCostAcruingResources",
+             
             "Properties": {
                 "AllocationId": {
                     "Fn::GetAtt": [
