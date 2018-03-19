@@ -216,11 +216,7 @@
                 "Runtime"      : "dotnetcore1.0",
                 "Timeout"      : 300,
 				"VpcConfig" : {
-					"SecurityGroupIds" : [{"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{"Ref" : "InternalDomainSecurityGroup"}, 
-						{"Ref" : "AWS::NoValue"}
-					]}],
+					"SecurityGroupIds" : [{"Ref" : "InternalDomainSecurityGroup"}],
 					"SubnetIds" : {"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
 				}
             }
