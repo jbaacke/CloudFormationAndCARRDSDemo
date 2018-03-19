@@ -221,27 +221,7 @@
 						{"Ref" : "InternalDomainSecurityGroup"}, 
 						{"Ref" : "AWS::NoValue"}
 					]}],
-					"SubnetIds" : {"Fn::Split" : [ ", ", 
-						{"Fn::If" : [
-						"CreateNetworkInfrastructure", 
-						{ "Fn::If" : [
-						"CreateThirdAvailabilityZone", 
-						{"Fn::Join" : [ ", ", [
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]},
-							{"Fn::GetAtt" : ["AvailabilityZone2" , "Outputs.LambdaSubnetID"]}
-						]] },
-						{"Fn::If" : ["CreateSecondAvailabilyZone",
-							{"Fn::Join" : [ ", ", [
-								{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]},
-								{"Fn::GetAtt" : ["AvailabilityZone1" , "Outputs.LambdaSubnetID"]}
-							]] },
-							{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
-						]}
-					]},
-					{"Ref" : "AWS::NoValue"}
-					]}
-					]}
+					"SubnetIds" : {"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}
 				}
             }
         },
