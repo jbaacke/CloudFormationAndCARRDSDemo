@@ -106,7 +106,7 @@
 
         "DemoVPC": {
             "Type": "AWS::EC2::VPC",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "CidrBlock": "10.0.0.0/16",
                 "EnableDnsSupport": true,
@@ -132,7 +132,7 @@
         },
         "PublicInternetGateway": {
             "Type": "AWS::EC2::InternetGateway",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "Tags": [
                     {
@@ -154,7 +154,7 @@
         },
         "PublicInternetGatewayAttachement": {
             "Type": "AWS::EC2::VPCGatewayAttachment",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "InternetGatewayId": {
                     "Ref": "PublicInternetGateway"
@@ -173,7 +173,7 @@
 
         "AvailabilityZone0": {
             "Type": "AWS::CloudFormation::Stack",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "Parameters": {
                     "EnvironmentName": {
@@ -321,7 +321,7 @@
 
         "InternalDomainSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -343,7 +343,7 @@
         },
         "RDPInternalSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -374,7 +374,7 @@
         },
         "LoadbalancerSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -403,7 +403,7 @@
         },
         "DomainControllerSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -447,7 +447,7 @@
         },
         "InternalWebTrafficSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -491,7 +491,7 @@
         },
         "MQTTSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
@@ -527,7 +527,7 @@
         },
         "ExternalRDPSecurityGroup": {
             "Type": "AWS::EC2::SecurityGroup",
-			"Condition": "CreateNetworkInfrastructure",
+			
             "Properties": {
                 "GroupName": {
                     "Fn::Join": [
