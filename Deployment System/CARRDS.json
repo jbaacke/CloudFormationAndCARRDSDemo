@@ -1,0 +1,47 @@
+﻿{
+    "BuildInformation":  {
+                             "SourceBranchName":  "test",
+                             "CommitID":  null,
+                             "BuildNumber":  null,
+                             "QueuedBy":  null
+                         },
+    "Parameters":  [
+                       {
+                           "ParameterKey":  "EnvironmentName",
+                           "ParameterValue":  "",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       },
+                       {
+                           "ParameterKey":  "StackSourceBucket",
+                           "ParameterValue":  "",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       },
+                       {
+                           "ParameterKey":  "StackSourcePath",
+                           "ParameterValue":  "",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       }
+                   ],
+    "StackStateResponses":  [
+                                {
+                                    "StackStatusRequirements":  {
+                                                                    "HostingBucket":  {
+                                                                                          "Value":  "CREATE_COMPLETE"
+                                                                                      }
+                                                                },
+                                    "DeploymentActions":  [
+                                                              {
+                                                                  "OriginBucket":  "${CARRDS.SourceBucket}",
+                                                                  "OriginPath":  "${CARRDS.SourcePath}/Web Resources/",
+                                                                  "DestinationBucket":  "${Stack.Outputs.HostingBucketName}",
+                                                                  "DestinationPath":  "",
+                                                                  "ActionType":  "S3BucketSync"
+                                                              }
+                                                          ]
+                                }
+                            ],
+    "TestMember":  "A purple elephant"
+}
