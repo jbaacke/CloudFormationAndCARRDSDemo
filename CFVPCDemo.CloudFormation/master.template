@@ -170,6 +170,116 @@
             }
         },
 
+		"DemoLambda" : {
+            "Type" : "AWS::Lambda::Function",
+			"DependsOn" : "DemoLambdaPolicy",
+            "Properties" : {
+                "Code" : {
+                    "S3Bucket" : {
+                        "Ref" : "StackSourceBucket"
+                    },
+                    "S3Key"    : {
+                        "Fn::Join" : [
+                            "/",
+                            [
+                                {
+                                    "Ref" : "StackSourcePath"
+                                },
+                                "Resources/CFVPCDemo.Lambda.AttachedLambda.zip"
+                            ]
+                        ]
+                    }
+                },
+                "Description" : "",
+                "FunctionName" : {
+                    "Fn::Join" : [
+                        "_",
+                        [
+                            "DemoLambda",
+							{ "Ref" : "EnvironmentName" }
+                        ]
+                    ]
+                },
+                "Handler"      : "CFVPCDemo.Lambda.AttachedLambda::CFVPCDemo.Lambda.AttachedLambda.Function::FunctionHandler",
+                "MemorySize"   : 128,
+                "Role"         : {
+                    "Fn::GetAtt" : [
+                        "DemoLambdaRole",
+                        "Arn"
+                    ]
+                },
+				"Environment"  : {
+                    "Variables" : {
+						"MyEnvironmentVariable" : "DevOps Rocks!"
+                    }
+                },
+                "Runtime"      : "dotnetcore1.0",
+                "Timeout"      : 300,
+				"VpcConfig" : {
+					"SecurityGroupIds" : [{"Ref" : "InternalDomainSecurityGroup"}],
+					"SubnetIds" : [{"Fn::GetAtt" : ["AvailabilityZone0" , "Outputs.LambdaSubnetID"]}]
+				}
+            }
+        },
+		"DemoLambdaPolicy" : {
+            "Type" : "AWS::IAM::Policy",
+            "Properties" : {
+                "PolicyName" : {
+                    "Fn::Join" : [
+                        "-",
+                        [
+                            {
+                                "Ref" : "EnvironmentName"
+                            },
+							"DemoLambdaPolicy"
+                        ]
+                    ]
+                },
+                "Roles"      : [
+                    {
+                        "Ref" : "DemoLambdaRole"
+                    }
+                ],
+                "PolicyDocument" : {
+                    "Version" : "2012-10-17",
+                    "Statement" : [
+                        {
+                            "Effect" : "Allow",
+                            "Action" : "Logs:*",
+                            "Resource" : "*"
+                        },
+						{
+							"Effect" : "Allow",
+                            "Action" : [
+								"ec2:DescribeNetworkInterfaces", 
+								"ec2:CreateNetworkInterface", 
+								"ec2:DeleteNetworkInterface"
+							],
+                            "Resource" : "*"
+						}
+                    ]
+                }
+            }
+        },
+        "DemoLambdaRole"   : {
+            "Type" : "AWS::IAM::Role",
+            "Properties" : {
+                "AssumeRolePolicyDocument" : {
+                    "Version" : "2012-10-17",
+                    "Statement" : [
+                        {
+                            "Sid" : "",
+                            "Effect" : "Allow",
+                            "Principal" : {
+                                "Service" : "lambda.amazonaws.com"
+                            },
+                            "Action"    : "sts:AssumeRole"
+                        }
+                    ]
+                }
+            }
+        },
+
 
         "AvailabilityZone0": {
             "Type": "AWS::CloudFormation::Stack",

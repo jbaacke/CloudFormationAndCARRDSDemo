@@ -1,0 +1,52 @@
+﻿{
+    "$type":  "CARRDS.Library.Models.CARRDSConfiguration, CARRDS.Library.Models",
+    "BuildInformation":  {
+                             "$type":  "CARRDS.Library.Models.BuildInformation, CARRDS.Library.Models",
+                             "SourceBranchName":  "CARRDSDemo",
+                             "CommitID":  "a940f962fe2435da4cfe67914afcc8d2ddaa8a45",
+                             "BuildNumber":  "373",
+                             "QueuedBy":  "Microsoft.VisualStudio.Services.TFS"
+                         },
+    "Parameters":  [
+                       {
+                           "$type":  "Amazon.CloudFormation.Model.Parameter, AWSSDK.CloudFormation",
+                           "ParameterKey":  "EnvironmentName",
+                           "ParameterValue":  "CARRDSDemo",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       },
+                       {
+                           "$type":  "Amazon.CloudFormation.Model.Parameter, AWSSDK.CloudFormation",
+                           "ParameterKey":  "StackSourceBucket",
+                           "ParameterValue":  "carrds-dev-internalsourcebucket-tv9zuw3slfi4",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       },
+                       {
+                           "$type":  "Amazon.CloudFormation.Model.Parameter, AWSSDK.CloudFormation",
+                           "ParameterKey":  "StackSourcePath",
+                           "ParameterValue":  "CFDemo/CARRDSDemo",
+                           "ResolvedValue":  null,
+                           "UsePreviousValue":  false
+                       }
+                   ],
+    "StackStatusResponses":  [
+                                 {
+                                     "$type":  "CARRDS.Library.Models.StackStatusResponse, CARRDS.Library.Models",
+                                     "CARRDSActions":  [
+                                                           {
+                                                               "$type":  "CARRDS.Library.Models.CARRDSActions.DeleteNetworkAssociations, CARRDS.Library.Models",
+                                                               "LambdaName":  "DemoLambda",
+                                                               "Name":  "DeleteNetworkAssociations",
+                                                               "Description":  null,
+                                                               "Type":  "DeleteNetworkAssociations"
+                                                           }
+                                                       ],
+                                     "ResourceName":  "DemoLambda",
+                                     "Status":  {
+                                                    "$type":  "Amazon.CloudFormation.ResourceStatus, AWSSDK.CloudFormation",
+                                                    "Value":  "DELETE_IN_PROGRESS"
+                                                }
+                                 }
+                             ]
+}
